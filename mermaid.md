@@ -1,11 +1,9 @@
 ```mermaid
 flowchart TD
-    A[자율주행차 주행 시작] --> B{도로가 훼손되었는가?}
-    B -- 훼손되지 않음 --> A
-    B -- 훼손 발견 --> C[차량 멈춤]
-    C --> D[위치 정보와 사진 데이터 수집]
-    D --> E[사진과 위치 데이터를 서버로 전송]
-    C --> F[방향 전환]
-    F --> G[다시 운행 시작]
-    G --> A
-'''
+    A[Autonomous Vehicle Driving] --> B{Is the road damaged?}
+    B -- No --> A
+    B -- Yes --> C[Vehicle Stops]
+    C --> D[Record Location on Raspberry Pi and Send Image to Server]
+    C --> E[Change Direction]
+    E --> F[Resume Driving]
+    F --> A
